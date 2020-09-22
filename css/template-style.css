@@ -1,8 +1,54 @@
 /* Default Template Styles */
 
-/* Typography */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Typography*/
+
+
+
+
+body {
+  background: #42c410;
 }
 p {
   color: #777;
@@ -75,7 +121,7 @@ blockquote::before {
   content: "“";
   display: block;
   float: left;
-  font-family: georgia;
+  font-family: Lilita One;
   font-size: 80px;
   height: 30px;
   left: -40px;
@@ -99,7 +145,7 @@ a.text-tag:link {
 a.text-tag:link:hover {
   background: #454545 none repeat scroll 0 0;
   border: 1px solid #454545;
-  color: #fff;
+  color: #42c410;
   transition: all 0.20s linear 0s;
   -o-transition: all 0.20s linear 0s;
   -ms-transition: all 0.20s linear 0s;
@@ -160,7 +206,7 @@ td {border-right:1px solid #fff;}
 .background-white-hightlight .aside-nav > ul > li.active-item > a:link, .background-white-hightlight .aside-nav > ul > li.active-item > a:visited,
 .primary-color-white .background-primary-hightlight .top-nav .active-item > a, .primary-color-white .background-primary-hightlight .top-nav li a:hover, .primary-color-white .background-primary-hightlight .aside-nav li a:hover, 
 .primary-color-white .background-primary-hightlight .aside-nav > ul > li.active-item > a:link, .primary-color-white .background-primary-hightlight .aside-nav > ul > li.active-item > a:visited {
-  background: #fff none repeat scroll 0 0;
+  background: #42c410 none repeat scroll 0 0;
   color: #454545;
 }
 .background-primary-hightlight .top-nav .active-item > a, .background-primary-hightlight .top-nav li a:hover, .background-primary-hightlight .aside-nav li a:hover, 
@@ -408,6 +454,7 @@ aside.aside-left {
 } 
 
 /* Background Colors */
+/*template bg color */
 .background-white, .primary-color-white .background-primary {
   background-color: #fff !important;
 }
@@ -466,7 +513,7 @@ aside.aside-left {
 .button.button-white-stroke, a.button.button-white-stroke, a.button.button-white-stroke:link, a.button.button-white-stroke:visited,
 .primary-color-white .button.button-primary-stroke, .primary-color-white a.button.button-primary-stroke, .primary-color-white a.button.button-primary-stroke:link, .primary-color-white a.button.button-primary-stroke:visited {
   background: none;
-  border: 1px solid #fff;
+  border: 1px solid #42c410;
   box-shadow: none;
   color: #fff;
 }
@@ -1095,15 +1142,26 @@ form.customform input:hover, form.customform textarea:hover, form.customform sel
     .top-nav .right {
       float: none;
     }
-    nav {
-        padding: 10px 0;
-        height: 60px;
+    .logo {
+      max-width: 250px;
+      margin: 0 auto;
     }
-    .logo img {
-      max-width: 172px;
-      max-height: 40px;
-      margin: 0 auto; 
-      width: auto;
+    .nav-text {
+      color: #fff;
+      display: block;
+      font-size: 1.2rem;
+      line-height: 3rem;
+      margin-right: 0.625rem;
+      max-width: 100%;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .nav-text::after {
+      color: #454545;
+      display: inline-block;
+      font-size: 3rem;
+      margin-left: 0;
+      margin-top: 30px;
     }
     .top-nav li a, .background-white .top-nav li a {
       background: #454545 none repeat scroll 0 0;
@@ -1562,7 +1620,7 @@ nav {
   display:none;
 }
 nav.fixed, .fixed nav {
-  background: #fff;
+  background: #42c410;
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
   padding: 0 2em;
 }
@@ -1634,7 +1692,7 @@ nav.fixed .left-menu, nav.fixed .right-menu {
 .top-nav .active-item a, .top-nav li a:hover {
   background: none;
 }
-.top-nav > div > ul > li > a::before {
+.top-nav > ul > li > a::before {
   width: 6px;
   height: 6px;
   display: block;
@@ -1653,23 +1711,23 @@ nav.fixed .left-menu, nav.fixed .right-menu {
   -moz-transition:all 0.20s linear 0s;
   -webkit-transition:all 0.20s linear 0s;
 }
-.top-nav > div > ul > li > a:hover::before, .top-nav > div > ul > li.active-item > a::before {
+.top-nav > ul > li > a:hover::before, .top-nav > ul > li.active-item > a::before {
 	bottom: 10px;
 	opacity: 1;
 }
 
 /* Menu dott color */
-.background-white-dott .top-nav > div > ul > li > a::before, .primary-color-white .background-primary-dott .top-nav > div > ul > li > a::before {background: #fff none repeat scroll 0 0;}
-.background-primary-dott .top-nav > div > ul > li > a::before, .primary-color-primary .background-primary-dott .top-nav > div > ul > li > a::before {background: #28a5df none repeat scroll 0 0;} 
-.background-dark-dott .top-nav > div > ul > li > a::before, .primary-color-dark .background-primary-dott .top-nav > div > ul > li > a::before {background: #434343 none repeat scroll 0 0;}
+.background-white-dott .top-nav > ul > li > a::before, .primary-color-white .background-primary-dott .top-nav > ul > li > a::before {background: #fff none repeat scroll 0 0;}
+.background-primary-dott .top-nav > ul > li > a::before, .primary-color-primary .background-primary-dott .top-nav > ul > li > a::before {background: #28a5df none repeat scroll 0 0;} 
+.background-dark-dott .top-nav > ul > li > a::before, .primary-color-dark .background-primary-dott .top-nav > ul > li > a::before {background: #434343 none repeat scroll 0 0;}
 
 /* Menu font color */
-.background-white-dott .top-nav > div > ul ul li.active-item > a, .primary-color-white .background-primary-dott .top-nav > div > ul ul li.active-item > a,
-.background-white-dott .top-nav > div > ul ul li > a:hover, .primary-color-white .background-primary-dott .top-nav > div > ul ul li > a:hover {color: #fff !important;}
-.background-primary-dott .top-nav > div > ul ul li.active-item > a, .primary-color-primary .background-primary-dott .top-nav > div > ul ul li.active-item > a,
-.background-primary-dott .top-nav > div > ul ul li > a:hover, .primary-color-primary .background-primary-dott .top-nav > div > ul ul li > a:hover {color: #28a5df !important;} 
-.background-dark-dott .top-nav > div > ul ul li.active-item > a, .primary-color-dark .background-primary-dott .top-nav > div > ul ul li.active-item > a,
-.background-dark-dott .top-nav > div > ul ul li > a:hover, .primary-color-dark .background-primary-dott .top-nav > div > ul ul li > a:hover {color: #434343 !important;}
+.background-white-dott .top-nav > ul ul li.active-item > a, .primary-color-white .background-primary-dott .top-nav > ul ul li.active-item > a,
+.background-white-dott .top-nav > ul ul li > a:hover, .primary-color-white .background-primary-dott .top-nav > ul ul li > a:hover {color: #fff !important;}
+.background-primary-dott .top-nav > ul ul li.active-item > a, .primary-color-primary .background-primary-dott .top-nav > ul ul li.active-item > a,
+.background-primary-dott .top-nav > ul ul li > a:hover, .primary-color-primary .background-primary-dott .top-nav > ul ul li > a:hover {color: #28a5df !important;} 
+.background-dark-dott .top-nav > ul ul li.active-item > a, .primary-color-dark .background-primary-dott .top-nav > ul ul li.active-item > a,
+.background-dark-dott .top-nav > ul ul li > a:hover, .primary-color-dark .background-primary-dott .top-nav > ul ul li > a:hover {color: #434343 !important;}
 
 /* Custom form */
 .customform input, .customform textarea {
@@ -1766,29 +1824,27 @@ a.tab-label, a.tab-label:link, a.tab-label:visited, a.tab-label:hover, .backgrou
 
 /* Tabs */
 a.tab-label.active-btn {
-  color: #fff!important;
+  color: #42c410!important;
 }
 
 @media screen and (max-width:768px) {
   header.position-absolute {
-    background: #fff none repeat scroll 0 0;
+    background: #42c410 none repeat scroll 0 0;
     position: relative;
   }
   nav {
     padding: 10px 0;
-    height: 60px;
   }
   .logo img {
-    max-width: 172px;
-    max-height: 40px;
-    margin: 0 auto; 
-    width: auto;
-    top: 0;
-  } 
-  .logo {
-    height: 60px;
-    display: block;
-  }  
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .logo img.logo-white {
+    display:none;
+  }
+  .logo img.logo-dark {
+    display:block;
+  }
   .nav-text::after {
     color: #454545;
   }
@@ -1801,51 +1857,37 @@ a.tab-label.active-btn {
   }
   .fixed .nav-text::after {
     color: #454545;
-  }  
-  .top-nav, .nav-text, .top-nav li a, .background-white .top-nav li a {
-    background: none repeat scroll 0 0 #454545;
   }
-  .logo-menu {
-    display: none;
+  .top-nav li a,.top-nav li ul li a {
+    border-top: 1px solid #42c410;
+    color: #777;
+    opacity: 1;
   }
-  nav.fixed .top-nav li a, .fixed nav .top-nav li a {
-    color: #fff;  
+  .top-nav li a, .background-white .top-nav li a {
+    background: #42c410 none repeat scroll 0 0;
+    font-size: 1.1em;
+    padding: 1em;
   }
-  nav.fixed .logo-white, .fixed nav .logo-white {
-    display:none;
+  .top-nav li ul li a {
+    background: #42c410!important;
   }
-  nav.fixed .logo-dark, .fixed nav .logo-dark, .logo-dark {
-    display:block;
-    width: auto;
-  } 
+  nav.fixed .top-nav li a, .fixed nav .top-nav li a, .top-nav li a:hover {
+    color: #777;  
+  }
   nav.fixed, .fixed nav {
-    padding: 10px 0;
+    padding: 0;
+  }
+  .logo-menu a.logo {
+    display: none;
   }
   .left-menu, .right-menu {
     width: 100%;
     padding-top: 0;
-  } 
-  .top-nav.left-menu, .top-nav.right-menu {
-    position: relative;
-    z-index: 10;
-    left: 0;
-    width: 100% !important;
-  }
-  .top-nav ul {
-    top:0;
-  }
-  .top-nav.left-menu {
-    padding-top:60px;
   }
   .margin-top-130 {
     margin-top: 0!important;
   }
   .padding-3x {
     padding: 30px !important;
-  }
-}
-@media screen and (max-width: 768px) {
-  .background-image {
-    background-position: center;
   }
 } 
